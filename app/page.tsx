@@ -5,6 +5,7 @@ import {
   Download, Mail, Phone, MapPin, Briefcase,
   GraduationCap, Code2, Award, ChevronRight, Layers
 } from "lucide-react";
+import emailjs from "emailjs-com";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -36,6 +37,7 @@ export default function Home() {
     { id: "skills", label: "Stack" },
     { id: "projects", label: "Projects" },
     { id: "resume", label: "Resume" },
+    { id: "contact", label: "Contact" }
   ];
 
   const skills = [
@@ -550,7 +552,93 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* ── CONTACT ── */}
+<section id="contact" className="px-8 md:px-24 py-28">
+  <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-12">
+    Contact Me
+  </h2>
 
+  <div className="grid md:grid-cols-2 gap-10">
+
+    {/* LEFT: CONTACT INFO */}
+    <div className="space-y-6">
+      <p className="text-slate-400">
+        Let’s build something together. Currently accepting new projects and full-time opportunities.
+      </p>
+
+      <p className="flex items-center gap-2 text-slate-300">
+        📧 kanumurikavya03@gmail.com
+      </p>
+
+      <p className="flex items-center gap-2 text-slate-300">
+        📞 +91 7207550919
+      </p>
+
+      <a
+        href="https://wa.me/917207550919?text=Hi Kavya, I saw your portfolio!"
+        target="_blank"
+        className="inline-block px-6 py-3 border border-green-600 text-green-400 rounded-xl hover:bg-green-600 hover:text-white transition"
+      >
+        WhatsApp
+      </a>
+    </div>
+
+    {/* RIGHT: FORM */}
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        const form = e.target as any;
+
+        emailjs.send(
+          "YOUR_SERVICE_ID",
+          "YOUR_TEMPLATE_ID",
+          {
+            name: form.name.value,
+            email: form.email.value,
+            message: form.message.value,
+          },
+          "YOUR_PUBLIC_KEY"
+        )
+        .then(() => {
+          alert("Message sent ✅");
+          form.reset();
+        })
+        .catch(() => {
+          alert("Error ❌");
+        });
+      }}
+      className="space-y-4"
+    >
+      <input
+        name="name"
+        placeholder="Your Name"
+        className="w-full p-4 bg-[#0d0f1a] border border-white/10 rounded-xl"
+        required
+      />
+
+      <input
+        name="email"
+        type="email"
+        placeholder="Your Email"
+        className="w-full p-4 bg-[#0d0f1a] border border-white/10 rounded-xl"
+        required
+      />
+
+      <textarea
+        name="message"
+        placeholder="Your Message"
+        className="w-full p-4 bg-[#0d0f1a] border border-white/10 rounded-xl"
+        rows={5}
+        required
+      />
+
+      <button className="px-6 py-3 bg-violet-600 rounded-xl hover:bg-violet-500 transition">
+        Send Message
+      </button>
+    </form>
+
+  </div>
+</section>
       {/* Footer */}
       <footer className="px-8 md:px-24 py-12 border-t border-white/[0.06] flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-slate-600 text-sm font-mono">
