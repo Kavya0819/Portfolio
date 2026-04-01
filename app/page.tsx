@@ -590,14 +590,14 @@ export default function Home() {
         const form = e.target as any;
 
         emailjs.send(
-          "YOUR_SERVICE_ID",
-          "YOUR_TEMPLATE_ID",
+          "service_nvs6qps",
+          "template_rzox9xf",
           {
             name: form.name.value,
             email: form.email.value,
             message: form.message.value,
           },
-          "YOUR_PUBLIC_KEY"
+          "vnrWgp4AGGu0LK_jO"
         )
         .then(() => {
           alert("Message sent ✅");
@@ -611,7 +611,7 @@ export default function Home() {
     >
       <input
         name="name"
-        placeholder="Your Name"
+        placeholder="Name"
         className="w-full p-4 bg-[#0d0f1a] border border-white/10 rounded-xl"
         required
       />
@@ -619,7 +619,7 @@ export default function Home() {
       <input
         name="email"
         type="email"
-        placeholder="Your Email"
+        placeholder="Email"
         className="w-full p-4 bg-[#0d0f1a] border border-white/10 rounded-xl"
         required
       />
