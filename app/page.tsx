@@ -179,7 +179,7 @@ export default function Home() {
               <Mail size={16} /> Email Me
             </a>
             <a
-              href="https://github.com/kanumurikavya"
+              href="https://github.com/Kavya0819"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 border border-slate-700 hover:border-slate-500 text-slate-400 hover:text-white rounded-2xl flex items-center gap-2 transition-all hover:-translate-y-0.5"
@@ -188,7 +188,7 @@ export default function Home() {
               GitHub
             </a>
             <a
-              href="https://linkedin.com/in/kanumurikavya"
+              href="https://www.linkedin.com/in/kanumuri-kavya/"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 border border-slate-700 hover:border-blue-500/50 text-slate-400 hover:text-blue-400 rounded-2xl flex items-center gap-2 transition-all hover:-translate-y-0.5"
